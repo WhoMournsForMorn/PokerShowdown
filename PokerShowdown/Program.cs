@@ -6,7 +6,9 @@ namespace PokerShowdown
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            PokerGame pokerGame = new PokerGame();
+
+            pokerGame.Evaluate();
         }
     }
 }

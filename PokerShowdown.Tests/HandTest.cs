@@ -68,7 +68,7 @@ namespace PokerShowdown.Tests
 
         [TestMethod]
         public void Hand_CalculatesOnePairStrength()
-        {
+        {   
 
             Hand hand = new Hand
             {
