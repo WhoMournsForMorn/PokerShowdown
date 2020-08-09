@@ -1,0 +1,13 @@
+C:\Users\dpsha\source\repos\PokerShowdown\PokerShowdown\bin\Debug\netcoreapp3.1\PokerShowdown.exe
+C:\Users\dpsha\source\repos\PokerShowdown\PokerShowdown\bin\Debug\netcoreapp3.1\PokerShowdown.deps.json
+C:\Users\dpsha\source\repos\PokerShowdown\PokerShowdown\bin\Debug\netcoreapp3.1\PokerShowdown.runtimeconfig.json
+C:\Users\dpsha\source\repos\PokerShowdown\PokerShowdown\bin\Debug\netcoreapp3.1\PokerShowdown.runtimeconfig.dev.json
+C:\Users\dpsha\source\repos\PokerShowdown\PokerShowdown\bin\Debug\netcoreapp3.1\PokerShowdown.dll
+C:\Users\dpsha\source\repos\PokerShowdown\PokerShowdown\bin\Debug\netcoreapp3.1\PokerShowdown.pdb
+C:\Users\dpsha\source\repos\PokerShowdown\PokerShowdown\obj\Debug\netcoreapp3.1\PokerShowdown.csprojAssemblyReference.cache
+C:\Users\dpsha\source\repos\PokerShowdown\PokerShowdown\obj\Debug\netcoreapp3.1\PokerShowdown.AssemblyInfoInputs.cache
+C:\Users\dpsha\source\repos\PokerShowdown\PokerShowdown\obj\Debug\netcoreapp3.1\PokerShowdown.AssemblyInfo.cs
+C:\Users\dpsha\source\repos\PokerShowdown\PokerShowdown\obj\Debug\netcoreapp3.1\PokerShowdown.csproj.CoreCompileInputs.cache
+C:\Users\dpsha\source\repos\PokerShowdown\PokerShowdown\obj\Debug\netcoreapp3.1\PokerShowdown.dll
+C:\Users\dpsha\source\repos\PokerShowdown\PokerShowdown\obj\Debug\netcoreapp3.1\PokerShowdown.pdb
+C:\Users\dpsha\source\repos\PokerShowdown\PokerShowdown\obj\Debug\netcoreapp3.1\PokerShowdown.genruntimeconfig.cache
