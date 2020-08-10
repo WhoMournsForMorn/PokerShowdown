@@ -7,9 +7,18 @@ namespace PokerShowdown
 {
     public class PokerGame
     {
-        public void Evaluate()
+        public void Evaluate(int roundNumber = 1)
         {
-            var playersHands = PlayerHands.GetPlayerHands();
+            var playersHands = PlayerHands.GetPlayerHands1();
+
+            if (roundNumber == 2)
+            {
+                playersHands = PlayerHands.GetPlayerHands2();
+            } else if (roundNumber == 3)
+            {
+                playersHands = PlayerHands.GetPlayerHands3();
+            }
+            
             List<Player> players = new List<Player>();
             
             foreach(PlayerHand playerHand in playersHands)
@@ -52,15 +61,22 @@ namespace PokerShowdown
         private string FormatOutput(List<Player> winners)
         {
             bool multipleWinners = winners.Count > 1;
-            string output = multipleWinners ? "Players" : "Player";
+            string output = "";
 
-            foreach (Player player in winners)
+            if (multipleWinners)
             {
-                output += $" {player.Name}";
-            }
+                Player lastPlayer = winners.Last();
 
-            output += multipleWinners ? " win" : " wins";
-            output += " the game!";
+                foreach (Player player in winners)
+                {
+                    output += player.Equals(lastPlayer) ? $"{player.Name} " : output += $"{player.Name} and ";
+                }
+                output += "are winners!";
+            }
+            else
+            {
+                output += $"{winners[0].Name} is the winner!";
+            }
 
             return output;
         }

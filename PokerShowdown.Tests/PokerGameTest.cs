@@ -10,7 +10,7 @@ namespace PokerShowdown.Tests
     public class PokerGameTest
     {
         [TestMethod]
-        public void PokerGame_ProperlyEvaluatesAGame()
+        public void PokerGame_Properly_Evaluates_Game1()
         {
             PokerGame pokerGame = new PokerGame();
 
@@ -20,11 +20,44 @@ namespace PokerShowdown.Tests
 
                 pokerGame.Evaluate();
 
-                string expectedOutput = "Player Joe wins the game!";
+                string expectedOutput = "Joe is the winner!";
 
                 Assert.AreEqual(expectedOutput, sw.ToString().Trim());
             }
         }
 
+        [TestMethod]
+        public void PokerGame_Properly_Evaluates_Game2()
+        {
+            PokerGame pokerGame = new PokerGame();
+
+            using (StringWriter sw = new StringWriter())
+            {
+                Console.SetOut(sw);
+
+                pokerGame.Evaluate(2);
+
+                string expectedOutput = "Jen is the winner!";
+
+                Assert.AreEqual(expectedOutput, sw.ToString().Trim());
+            }
+        }
+
+        [TestMethod]
+        public void PokerGame_Properly_Evaluates_Game3()
+        {
+            PokerGame pokerGame = new PokerGame();
+
+            using (StringWriter sw = new StringWriter())
+            {
+                Console.SetOut(sw);
+
+                pokerGame.Evaluate(3);
+
+                string expectedOutput = "Joe and Jen are winners!";
+
+                Assert.AreEqual(expectedOutput, sw.ToString().Trim());
+            }
+        }
     }
 }

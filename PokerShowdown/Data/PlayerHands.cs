@@ -93,12 +93,12 @@ namespace PokerShowdown.Data
             Rank = Rank.Seven
         };
 
-        static readonly Card nineClubs = new Card
+        static readonly Card tenClubs = new Card
         {
             Suit = Suit.Clubs,
-            Rank = Rank.Nine
+            Rank = Rank.Ten
         };
-        public static IEnumerable<PlayerHand> GetPlayerHands()
+        public static IEnumerable<PlayerHand> GetPlayerHands1()
         {
             yield return new PlayerHand
             {
@@ -114,7 +114,49 @@ namespace PokerShowdown.Data
             yield return new PlayerHand
             {
                 PlayerName = "Bob",
-                Cards = new List<Card> { threeCLubs, fiveClubs, twoSpades, sevenDiamonds, nineClubs }
+                Cards = new List<Card> { threeCLubs, fiveClubs, twoSpades, sevenDiamonds, tenClubs }
+
+            };
+        }
+
+        public static IEnumerable<PlayerHand> GetPlayerHands2()
+        {
+            yield return new PlayerHand
+            {
+                PlayerName = "Joe",
+                Cards = new List<Card> { aceSpades, kingDiamonds, queenDiamonds, aceDiamonds, aceClubs }
+            };
+            yield return new PlayerHand
+            {
+                PlayerName = "Jen",
+                Cards = new List<Card> { sevenHearts, tenHearts, queenHearts, aceHearts, twoHearts }
+
+            };
+            yield return new PlayerHand
+            {
+                PlayerName = "Bob",
+                Cards = new List<Card> { threeCLubs, fiveClubs, twoSpades, sevenDiamonds, tenClubs }
+
+            };
+        }
+
+        public static IEnumerable<PlayerHand> GetPlayerHands3()
+        {
+            yield return new PlayerHand
+            {
+                PlayerName = "Joe",
+                Cards = new List<Card> { aceSpades, tenClubs, queenDiamonds, sevenHearts, aceClubs }
+            };
+            yield return new PlayerHand
+            {
+                PlayerName = "Jen",
+                Cards = new List<Card> { aceDiamonds, tenHearts, queenHearts, aceHearts, sevenDiamonds }
+
+            };
+            yield return new PlayerHand
+            {
+                PlayerName = "Bob",
+                Cards = new List<Card> { threeCLubs, fiveClubs, twoSpades, twoHearts, kingDiamonds }
 
             };
         }
