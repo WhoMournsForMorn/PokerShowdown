@@ -5,8 +5,15 @@ using System.Linq;
 
 namespace PokerShowdown
 {
+    /// <summary>
+    /// Class <c>PokerGame</c> evaluates a set of cards associated to players and declares a winner(s)
+    /// </summary>
     public class PokerGame
     {
+        /// <summary>
+        /// method <c>Evaluate</c> accepts an int to determine what hands to play and declares a winner
+        /// </summary>
+        /// <param name="roundNumber"></param>
         public void Evaluate(int roundNumber = 1)
         {
             var playersHands = PlayerHands.GetPlayerHands1();
@@ -38,6 +45,11 @@ namespace PokerShowdown
             Console.WriteLine(FormatOutput(winners));    
         }
 
+        /// <summary>
+        /// <c>GetTopHandRank</c> determines the highest value hand from all players passed 
+        /// </summary>
+        /// <param name="players"></param>
+        /// <returns><c>HandRank</c></returns>
         private HandRank GetTopHandRank(List<Player> players)
         {
             List<HandRank> handRanks = new List<HandRank>();
@@ -49,6 +61,12 @@ namespace PokerShowdown
             return handRanks.First();
         }
 
+        /// <summary>
+        /// <c>GetWinningPlayers</c> determines which players match the top <c>HandRank</c>
+        /// </summary>
+        /// <param name="topHandRank"></param>
+        /// <param name="players"></param>
+        /// <returns><c>List<Player></c></returns>
         private List<Player> GetWinningPlayers(HandRank topHandRank, List<Player> players)
         {
             List<Player> winningPlayers = players.Select(player => player)
@@ -58,6 +76,11 @@ namespace PokerShowdown
             return winningPlayers;
         }
 
+        /// <summary>
+        /// <c>FormatOutput</c> Formats the string output into the appropriate message
+        /// </summary>
+        /// <param name="winners"></param>
+        /// <returns><c>string</c></returns>
         private string FormatOutput(List<Player> winners)
         {
             bool multipleWinners = winners.Count > 1;

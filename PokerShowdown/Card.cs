@@ -1,5 +1,8 @@
 ﻿namespace PokerShowdown
 {
+    /// <summary>
+    /// <c>Suit</c> represents the <c>Card</c> colour and symbol
+    /// </summary>
     public enum Suit
     {
         Clubs,
@@ -8,6 +11,9 @@
         Spades
     }
 
+    /// <summary>
+    /// <c>Rank</c> represents the value of a <c>Card</c>
+    /// </summary>
     public enum Rank
     {
         Two,
@@ -25,6 +31,9 @@
         Ace
     }
 
+    /// <summary>
+    /// <c>Card</c> represents a typical playing card with a <c>Suit</c> and <c>Rank</c>
+    /// </summary>
     public class Card
     {
         public Suit Suit { get; set; }

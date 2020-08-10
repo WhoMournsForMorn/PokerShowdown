@@ -4,11 +4,18 @@ using System.Text;
 
 namespace PokerShowdown.Data
 {
+    /// <summary>
+    /// <c>PlayerHand</c> created only as a synthetic data object
+    /// </summary>
     public class PlayerHand
     {
         public string PlayerName { get; set; }
         public List<Card> Cards { get; set; }
     }
+
+    /// <summary>
+    /// <c>PlayerHands</c> created only as a synthetic data object
+    /// </summary>
     public static class PlayerHands
     {
         static readonly Card aceSpades = new Card
@@ -98,6 +105,11 @@ namespace PokerShowdown.Data
             Suit = Suit.Clubs,
             Rank = Rank.Ten
         };
+
+        /// <summary>
+        /// <c>GetPlayerHands1</c> returns a synthetic response for app input
+        /// </summary>
+        /// <returns></returns>
         public static IEnumerable<PlayerHand> GetPlayerHands1()
         {
             yield return new PlayerHand
@@ -119,6 +131,10 @@ namespace PokerShowdown.Data
             };
         }
 
+        /// <summary>
+        /// <c>GetPlayerHands2</c> returns a synthetic response for app input
+        /// </summary>
+        /// <returns></returns>
         public static IEnumerable<PlayerHand> GetPlayerHands2()
         {
             yield return new PlayerHand
@@ -140,6 +156,10 @@ namespace PokerShowdown.Data
             };
         }
 
+        /// <summary>
+        /// <c>GetPlayerHands3</c> returns a synthetic response for app input
+        /// </summary>
+        /// <returns></returns>
         public static IEnumerable<PlayerHand> GetPlayerHands3()
         {
             yield return new PlayerHand

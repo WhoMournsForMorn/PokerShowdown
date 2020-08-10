@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace PokerShowdown
 {
+    /// <summary>
+    /// <c>PokerHand</c> an enum of potential poker hands and associated values enlarged for normalization
+    /// </summary>
     public enum PokerHand
     {
         HighCard = 10000,
@@ -12,10 +15,17 @@ namespace PokerShowdown
         Flush = 40000
     }
 
+    /// <summary>
+    /// <c>Hand</c> represents a poker hand
+    /// </summary>
     public class Hand
     {
         public IEnumerable<Card> Cards { get; set; }
 
+        /// <summary>
+        /// <c>GetHandRank</c> iterates through a list of <c>Card</c> and determines the HandRank of that grouping
+        /// </summary>
+        /// <returns><c>HandRank</c></returns>
         public HandRank GetHandRank()
         {
             HandRank handRank = new HandRank

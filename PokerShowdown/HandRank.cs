@@ -4,11 +4,21 @@ using System.Text;
 
 namespace PokerShowdown
 {
+    /// <summary>
+    /// <c>HandRank</c> is the representation of a <c>Hand</c> value
+    /// Broken down by <c>Strength</c> meaning the value of potential <c>PokerHand</c>
+    /// <c>Kickers</c> represent the <c>Strength</c> tie breakers
+    /// </summary>
     public class HandRank : IComparable
     {
         public int Strength { get; set; }
         public List<int> Kickers { get; set; }
 
+        /// <summary>
+        /// <c>CompareTo</c> compares two HandRank objects by their <c>Strength</c> and <c>Kickers</c>
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns><c>int</c></returns>
         public int CompareTo(object obj)
         {
             if (obj == null) return 1;
