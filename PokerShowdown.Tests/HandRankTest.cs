@@ -7,7 +7,142 @@ namespace PokerShowdown.Tests
     public class HandRankTest
     {
         [TestMethod]
-        public void HandRank_WhenCompared_ShouldValueHigherRanktoLowerRank()
+        public void HandRank_WhenCompared_Should_Value_High_Strength_over_Low()
+        {
+            HandRank highHandRank = new HandRank
+            {
+                Strength = 40000
+            };
+
+            HandRank lowHandRank = new HandRank
+            {
+                Strength = 10000
+            };
+
+            int compareValue = highHandRank.CompareTo(lowHandRank);
+            int expectedValue = -1;
+
+            Assert.AreEqual(expectedValue, compareValue, "integers are not equal");
+        }
+
+        [TestMethod]
+        public void HandRank_WhenCompared_Should_Value_Low_Strength_under_High()
+        {
+            HandRank lowHandRank = new HandRank
+            {
+                Strength = 10000
+            };
+
+            HandRank highHandRank = new HandRank
+            {
+                Strength = 40000
+            };
+
+            int compareValue = lowHandRank.CompareTo(highHandRank);
+            int expectedValue = 1;
+
+            Assert.AreEqual(expectedValue, compareValue, "integers are not equal");
+        }
+
+        [TestMethod]
+        public void HandRank_WhenCompared_Should_Value_High_Kickers_over_Low()
+        {
+            HandRank highHandRank = new HandRank
+            {
+                Kickers = new List<int> { 12, 11, 10 }
+            };
+
+            HandRank lowHandRank = new HandRank
+            {
+                Kickers = new List<int> { 9, 8, 7 }
+            };
+
+            int compareValue = highHandRank.CompareTo(lowHandRank);
+            int expectedValue = -1;
+
+            Assert.AreEqual(expectedValue, compareValue, "integers are not equal");
+        }
+
+        [TestMethod]
+        public void HandRank_WhenCompared_Should_Value_Low_Kickers_under_High()
+        {
+            HandRank lowHandRank = new HandRank
+            {
+                Kickers = new List<int> { 9, 8, 7 }
+            };
+
+            HandRank highHandRank = new HandRank
+            {
+                Kickers = new List<int> { 12, 11, 10 }
+            };
+
+            int compareValue = lowHandRank.CompareTo(highHandRank);
+            int expectedValue = 1;
+
+            Assert.AreEqual(expectedValue, compareValue, "integers are not equal");
+        }
+
+        [TestMethod]
+        public void HandRank_WhenCompared_Should_Value_Same_Strength_as_Equal()
+        {
+            HandRank firstHandRank = new HandRank
+            {
+                Strength = 20000
+            };
+
+            HandRank secondHandRank = new HandRank
+            {
+                Strength = 20000
+            };
+
+            int compareValue = firstHandRank.CompareTo(secondHandRank);
+            int expectedValue = 0;
+
+            Assert.AreEqual(expectedValue, compareValue, "integers are not equal");
+        }
+
+        [TestMethod]
+        public void HandRank_WhenCompared_Should_Value_Same_Kickers_as_Equal()
+        {
+            HandRank firstHandRank = new HandRank
+            {
+                Kickers = new List<int> { 9, 8, 7 }
+            };
+
+            HandRank secondHandRank = new HandRank
+            {
+                Kickers = new List<int> { 9, 8, 7 }
+            };
+
+            int compareValue = firstHandRank.CompareTo(secondHandRank);
+            int expectedValue = 0;
+
+            Assert.AreEqual(expectedValue, compareValue, "integers are not equal");
+        }
+
+        [TestMethod]
+        public void HandRank_WhenCompared_Should_Value_Same_StrengthKickers_as_Equal()
+        {
+            HandRank firstHandRank = new HandRank
+            {
+                Strength = 20000,
+                Kickers = new List<int> { 9, 8, 7 }
+            };
+
+            HandRank secondHandRank = new HandRank
+            {
+                Strength = 20000,
+                Kickers = new List<int> { 9, 8, 7 }
+            };
+
+            int compareValue = firstHandRank.CompareTo(secondHandRank);
+            int expectedValue = 0;
+
+            Assert.AreEqual(expectedValue, compareValue, "integers are not equal");
+        }
+
+        [TestMethod]
+        public void HandRank_WhenSorted_Should_Value_High_to_Low()
         {
             HandRank highHandRank = new HandRank
             {
@@ -44,7 +179,7 @@ namespace PokerShowdown.Tests
         }
 
         [TestMethod]
-        public void HandRank_WhenCompared_ShouldNotValueLowerRanktoHigherRank()
+        public void HandRank_WhenSorted_Should_Not_Value_Low_to_High()
         {
             HandRank highHandRank = new HandRank
             {
@@ -81,7 +216,7 @@ namespace PokerShowdown.Tests
         }
 
         [TestMethod]
-        public void HandRank_WhenCompared_ShouldBreakTieWithHighKicker()
+        public void HandRank_WhenSorted_Should_Break_Tie_With_HighKicker()
         {
             HandRank handRankHighKicker = new HandRank
             {
@@ -121,7 +256,7 @@ namespace PokerShowdown.Tests
         }
 
         [TestMethod]
-        public void HandRank_WhenCompared_ShouldBreakTieWithLastKicker()
+        public void HandRank_WhenSorted_Should_Break_Tie_With_Last_Kicker()
         {
             HandRank handRankHighKicker = new HandRank
             {
@@ -161,7 +296,7 @@ namespace PokerShowdown.Tests
         }
 
         [TestMethod]
-        public void HandRank_WhenCompared_ShouldBreakTieWithMiddleKicker()
+        public void HandRank_WhenSorted_Should_Break_Tie_With_MiddleKicker()
         {
             HandRank handRankHighKicker = new HandRank
             {
@@ -201,7 +336,7 @@ namespace PokerShowdown.Tests
         }
 
         [TestMethod]
-        public void HandRank_WhenCompared_ShouldNotBreakTieWithLowKicker()
+        public void HandRank_WhenSorted_Should_Not_Break_Tie_With_LowKicker()
         {
             HandRank handRankHighKicker = new HandRank
             {
@@ -241,7 +376,7 @@ namespace PokerShowdown.Tests
         }
 
         [TestMethod]
-        public void HandRank_WhenCompared_HigherRankShouldBeHigherWithLowKickers()
+        public void HandRank_WhenSorted_High_Should_Be_Higher_With_LowKickers()
         {
             HandRank handRankHighRank = new HandRank
             {
@@ -281,7 +416,7 @@ namespace PokerShowdown.Tests
         }
 
         [TestMethod]
-        public void HandRank_WhenCompared_LowerRankShouldNotBeHigherWithHigherKickers()
+        public void HandRank_WhenSorted_Low_Should_Not_Be_Higher_With_HigherKickers()
         {
             HandRank handRankHighRank = new HandRank
             {
@@ -321,7 +456,7 @@ namespace PokerShowdown.Tests
         }
 
         [TestMethod]
-        public void HandRank_WhenCompared_EqualRanksTieWithoutKickers()
+        public void HandRank_WhenSorted_Equal_Ranks_Tie_Without_Kickers()
         {
             HandRank handRank1 = new HandRank
             {
@@ -358,7 +493,7 @@ namespace PokerShowdown.Tests
         }
 
         [TestMethod]
-        public void HandRank_WhenCompared_SortsByKickerOnlyWhenNoRank()
+        public void HandRank_WhenSorted_Sorts_By_Kicker_Only_When_Strength()
         {
             HandRank handRank1 = new HandRank
             {

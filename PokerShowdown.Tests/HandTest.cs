@@ -42,12 +42,6 @@ namespace PokerShowdown.Tests
             Rank = Rank.Ace
         };
 
-        Card aceDiamonds = new Card
-        {
-            Suit = Suit.Diamonds,
-            Rank = Rank.Ace
-        };
-
         Card kingDiamonds = new Card
         {
             Suit = Suit.Diamonds,
@@ -67,7 +61,7 @@ namespace PokerShowdown.Tests
         };
 
         [TestMethod]
-        public void Hand_CalculatesOnePairStrength()
+        public void Hand_Calculates_OnePair_Strength()
         {   
 
             Hand hand = new Hand
@@ -83,7 +77,7 @@ namespace PokerShowdown.Tests
         }
 
         [TestMethod]
-        public void Hand_CalculatesThreeOfAKindStrength()
+        public void Hand_Calculates_ThreeOfAKind_Strength()
         {
 
             Hand hand = new Hand
@@ -99,7 +93,7 @@ namespace PokerShowdown.Tests
         }
 
         [TestMethod]
-        public void Hand_CalculateHighCardStrength()
+        public void Hand_Calculates_HighCard_Strength()
         {
 
             Hand hand = new Hand
@@ -115,7 +109,7 @@ namespace PokerShowdown.Tests
         }
 
         [TestMethod]
-        public void Hand_CalculateFlushStrength()
+        public void Hand_Calculates_Flush_Strength()
         {
 
             Hand hand = new Hand
@@ -131,7 +125,7 @@ namespace PokerShowdown.Tests
         }
 
         [TestMethod]
-        public void Hand_KickersAreOrdered()
+        public void Hand_Kickers_Are_Ordered()
         {
             Hand hand = new Hand
             {
@@ -146,7 +140,7 @@ namespace PokerShowdown.Tests
         }
 
         [TestMethod]
-        public void Hand_OnePairHasThreeKickers()
+        public void Hand_OnePair_Has_Three_Kickers()
         {
 
             Hand hand = new Hand
@@ -162,7 +156,7 @@ namespace PokerShowdown.Tests
         }
 
         [TestMethod]
-        public void Hand_ThreeOfAKindHasTwoKickers()
+        public void Hand_ThreeOfAKind_Has_Two_Kickers()
         {
 
             Hand hand = new Hand
@@ -178,7 +172,7 @@ namespace PokerShowdown.Tests
         }
 
         [TestMethod]
-        public void Hand_HighCardHasFiveKickers()
+        public void Hand_HighCard_Has_Five_Kickers()
         {
 
             Hand hand = new Hand
@@ -194,7 +188,7 @@ namespace PokerShowdown.Tests
         }
 
         [TestMethod]
-        public void Hand_FlushHasFiveKickers()
+        public void Hand_Flush_Has_Five_Kickers()
         {
 
             Hand hand = new Hand

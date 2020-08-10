@@ -1,7 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.Design;
 using System.IO;
 
 namespace PokerShowdown.Tests
@@ -10,7 +8,7 @@ namespace PokerShowdown.Tests
     public class PokerGameTest
     {
         [TestMethod]
-        public void PokerGame_Properly_Evaluates_Game1()
+        public void PokerGame_Correctly_Evaluates_Game1()
         {
             PokerGame pokerGame = new PokerGame();
 
@@ -27,7 +25,7 @@ namespace PokerShowdown.Tests
         }
 
         [TestMethod]
-        public void PokerGame_Properly_Evaluates_Game2()
+        public void PokerGame_Correctly_Evaluates_Game2()
         {
             PokerGame pokerGame = new PokerGame();
 
@@ -44,7 +42,7 @@ namespace PokerShowdown.Tests
         }
 
         [TestMethod]
-        public void PokerGame_Properly_Evaluates_Game3()
+        public void PokerGame_Correctly_Evaluates_Game3()
         {
             PokerGame pokerGame = new PokerGame();
 

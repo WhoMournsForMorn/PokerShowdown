@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace PokerShowdown
+﻿namespace PokerShowdown
 {
     class Program
     {
