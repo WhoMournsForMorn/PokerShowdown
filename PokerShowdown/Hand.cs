@@ -4,7 +4,7 @@ using System.Linq;
 namespace PokerShowdown
 {
     /// <summary>
-    /// <c>PokerHand</c> an enum of potential poker hands and associated values enlarged for normalization
+    /// <c>PokerHand</c> an enum of potential poker hands and associated values
     /// </summary>
     public enum PokerHand
     {
